@@ -2,8 +2,6 @@ import { StyleSheet } from 'react-native';
 
 import {
   PRIMARY_COLOR,
-  TEXT_COLOR,
-  BORDER_COLOR,
   PRIMARY_FONT,
   BASE_FONT_SIZE,
 } from '../../utils/AppStyles';
@@ -34,7 +32,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 5 * PRIMARY_FONT,
     flexGrow: 0,
-  }
+  },
 });
 
 export default styles;

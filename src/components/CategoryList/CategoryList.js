@@ -3,8 +3,6 @@ import {
   View,
   ScrollView,
   Text,
-  FlatList,
-  StyleSheet,
   TouchableOpacity,
 } from 'react-native';
 
@@ -22,17 +20,18 @@ class CategotyList extends Component {
 
   componentDidMount() {
     api.get('categories')
-      .then(categories => this.setState({ categories }))
+      .then(categories => this.setState({ categories }));
   }
 
-  getCategoryItem({_id, name, icon }) {
+  getCategoryItem({ _id, name, icon }) {
     return (
       <View style={styles.categoryWrapper}>
         <TouchableOpacity
           onPress={() => console.log(`pressed ${name}`)}
-          style={styles.category}>
+          style={styles.category}
+        >
           <View>
-            <Icon style={styles.icon} name={icon || "ios-alarm-outline"} />
+            <Icon style={styles.icon} name={icon || 'ios-alarm-outline'} />
             <Text style={styles.name}>{capitalize(name)}</Text>
           </View>
         </TouchableOpacity>
@@ -42,8 +41,6 @@ class CategotyList extends Component {
 
   render() {
     const { categories } = this.state;
-    const f = 'asd';
-    const a = f == 'asd';
     return (
       <View style={styles.container}>
         <ScrollView>
