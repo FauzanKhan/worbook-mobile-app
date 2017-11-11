@@ -1,8 +1,16 @@
 import { StyleSheet } from 'react-native';
 
+import {
+  PRIMARY_COLOR,
+  TEXT_COLOR,
+  BORDER_COLOR,
+  PRIMARY_FONT,
+  BASE_FONT_SIZE,
+} from '../../utils/AppStyles';
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#333',
+    backgroundColor: PRIMARY_COLOR,
     paddingHorizontal: 20,
     paddingTop: 35,
     paddingBottom: 15,
@@ -13,9 +21,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#FFF',
-    fontSize: 24,
+    fontSize: 3 * BASE_FONT_SIZE,
     flexGrow: 1,
-    fontFamily: 'sans-serif-light',
+    fontFamily: PRIMARY_FONT,
     textAlign: 'center',
   },
   logoText: {
@@ -24,7 +32,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     color: '#FFF',
-    fontSize: 44,
+    fontSize: 5 * PRIMARY_FONT,
     flexGrow: 0,
   }
 });

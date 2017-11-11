@@ -1,5 +1,12 @@
 import { StyleSheet } from 'react-native';
 
+import {
+  TEXT_COLOR,
+  BORDER_COLOR,
+  PRIMARY_FONT,
+  BASE_FONT_SIZE,
+} from '../../utils/AppStyles';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -13,7 +20,7 @@ const styles = StyleSheet.create({
     width: '50%',
     borderLeftWidth: 1,
     borderBottomWidth: 1,
-    borderColor: '#EAEAEA',
+    borderColor: BORDER_COLOR,
     height: 250,
   },
   category: {
@@ -24,15 +31,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    fontSize: 48,
+    fontSize: 5 * BASE_FONT_SIZE,
     paddingBottom: 10,
-    color: '#666',
+    color: TEXT_COLOR,
     textAlign: 'center',
   },
   name: {
-    fontFamily: 'sans-serif-light',
-    fontSize: 18,
-  }
+    fontFamily: PRIMARY_FONT,
+    fontSize: 2 * BASE_FONT_SIZE,
+  },
 });
 
 export default styles;
