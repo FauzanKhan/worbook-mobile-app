@@ -42,7 +42,8 @@ class CategotyList extends Component {
 
   render() {
     const { categories } = this.state;
-
+    const f = 'asd';
+    const a = f == 'asd';
     return (
       <View style={styles.container}>
         <ScrollView>
