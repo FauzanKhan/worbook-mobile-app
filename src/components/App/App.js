@@ -1,17 +1,27 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 import Header from '../Header';
 import CategoryList from '../CategoryList';
+import WordList from '../WordList';
 
 import styles from './AppStyles';
 
-const App = () => (
-  <View style={styles.container}>
-    <Header />
-    <CategoryList />
-  </View>
-);
-
+const App = StackNavigator({
+  Home: {
+    screen: CategoryList,
+    navigationOptions: {
+      title: 'WordBook',
+      header: <Header title="WordBook" />,
+    },
+  },
+  WordList: {
+    screen: WordList,
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.state.params.categoryId,
+      header: <Header showBackButton title={navigation.state.params.category.name} />,
+    }),
+  },
+});
 
 export default App;

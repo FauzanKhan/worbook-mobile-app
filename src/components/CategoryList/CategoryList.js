@@ -16,6 +16,9 @@ class CategoryList extends Component {
   constructor() {
     super();
     this.state = {};
+
+    this.getCategoryItem = this.getCategoryItem.bind(this);
+    this.handleCategorySelection = this.handleCategorySelection.bind(this);
   }
 
   componentDidMount() {
@@ -23,11 +26,13 @@ class CategoryList extends Component {
       .then(categories => this.setState({ categories }));
   }
 
-  getCategoryItem({ _id, name, icon }) {
+  getCategoryItem(category) {
+    const { _id, name, icon } = category;
+
     return (
-      <View style={styles.categoryWrapper}>
+      <View key={_id} style={styles.categoryWrapper}>
         <TouchableOpacity
-          onPress={() => console.log(`pressed ${name}`)}
+          onPress={() => this.handleCategorySelection(category)}
           style={styles.category}
         >
           <View>
@@ -37,6 +42,10 @@ class CategoryList extends Component {
         </TouchableOpacity>
       </View>
     );
+  }
+
+  handleCategorySelection(category) {
+    this.props.navigation.navigate('WordList', { category });
   }
 
   render() {

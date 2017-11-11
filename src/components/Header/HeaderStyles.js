@@ -12,26 +12,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 35,
     paddingBottom: 15,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 0,
+    // display: 'flex',
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // marginBottom: 0,
+    // position: 'relative',
   },
-  text: {
+  title: {
     color: '#FFF',
     fontSize: 3 * BASE_FONT_SIZE,
     flexGrow: 1,
     fontFamily: PRIMARY_FONT,
     textAlign: 'center',
   },
-  logoText: {
-    textAlign: 'left',
-    paddingLeft: 40,
-  },
   backButton: {
     color: '#FFF',
-    fontSize: 5 * PRIMARY_FONT,
-    flexGrow: 0,
+    fontSize: 5 * BASE_FONT_SIZE,
+    position: 'absolute',
+    top: '85%',
+    left: 20,
   },
 });
 
