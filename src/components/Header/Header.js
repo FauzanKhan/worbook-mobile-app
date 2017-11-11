@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import styles from './HeaderStyles';
 class Header extends Component {
   render() {
     const { showBackButton } = this.props;
@@ -19,35 +20,5 @@ class Header extends Component {
     );
   }
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#00aced',
-    paddingHorizontal: 20,
-    paddingTop: 35,
-    paddingBottom: 15,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 0,
-  },
-  text: {
-    color: '#FFF',
-    fontSize: 24,
-    flexGrow: 1,
-    fontFamily: 'sans-serif-light',
-    textAlign: 'center',
-  },
-  logoText: {
-    textAlign: 'left',
-    paddingLeft: 40,
-  },
-  backButton: {
-    color: '#FFF',
-    fontSize: 44,
-    flexGrow: 0,
-  }
-});
-
 
 export default Header;
