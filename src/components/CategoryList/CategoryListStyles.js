@@ -5,7 +5,7 @@ import {
   BORDER_COLOR,
   PRIMARY_FONT,
   BASE_FONT_SIZE,
-} from '../../utils/AppStyles';
+} from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
   container: {

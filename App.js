@@ -1,24 +1,4 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import App from './src/components/App';
 
-import Header from './src/components/Header';
-import CategoryList from './src/components/CategoryList';
-import api from './src/utils/api';
-
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header />
-        <CategoryList />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FEFEFE',
-  },
-});
+export default () => (<App />);
