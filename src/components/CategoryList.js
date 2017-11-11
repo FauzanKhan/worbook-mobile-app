@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, FlatList, StyleSheet } from 'react-native';
+import {
+  View,
+  ScrollView,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import { capitalize } from 'lodash';
+
 import api from '../utils/api';
 
 class CategotyList extends Component {
@@ -17,9 +26,15 @@ class CategotyList extends Component {
 
   getCategoryItem({_id, name, icon }) {
     return (
-      <View style={styles.category} key={_id}>
-        <Icon style={styles.icon} name={icon || "ios-alarm-outline"} />
-        <Text style={styles.name}>{capitalize(name)}</Text>
+      <View style={styles.categoryWrapper}>
+        <TouchableOpacity
+          onPress={() => console.log(`pressed ${name}`)}
+          style={styles.category}>
+          <View>
+            <Icon style={styles.icon} name={icon || "ios-alarm-outline"} />
+            <Text style={styles.name}>{capitalize(name)}</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -35,7 +50,7 @@ class CategotyList extends Component {
                 { categories.map(this.getCategoryItem) }
                 { /* TODO: remove this hack for last child border */ }
                 { categories && (categories.length % 2 !== 0)
-                    ? <View style={styles.category} />
+                    ? <View style={styles.categoryWrapper} />
                     : null
                 }
             </View>
@@ -55,12 +70,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  category: {
+  categoryWrapper: {
     width: '50%',
     borderLeftWidth: 1,
     borderBottomWidth: 1,
     borderColor: '#EAEAEA',
     height: 250,
+  },
+  category: {
+    width: '100%',
+    height: '100%',
     padding: 30,
     justifyContent: 'center',
     alignItems: 'center',
@@ -69,6 +88,7 @@ const styles = StyleSheet.create({
     fontSize: 48,
     paddingBottom: 10,
     color: '#666',
+    textAlign: 'center',
   },
   name: {
     fontFamily: 'sans-serif-light',
