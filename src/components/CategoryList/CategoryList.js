@@ -12,7 +12,7 @@ import { capitalize } from 'lodash';
 import styles from './CategoryListStyles';
 import api from '../../utils/api';
 
-class CategotyList extends Component {
+class CategoryList extends Component {
   constructor() {
     super();
     this.state = {};
@@ -49,7 +49,7 @@ class CategotyList extends Component {
                 { categories.map(this.getCategoryItem) }
                 { /* TODO: remove this hack for last child border */ }
                 { categories && (categories.length % 2 !== 0)
-                    ? <View style={styles.categoryWrapper} />
+                    ? <View key="temp" style={styles.categoryWrapper} />
                     : null
                 }
             </View>
@@ -60,4 +60,4 @@ class CategotyList extends Component {
   }
 }
 
-export default CategotyList;
+export default CategoryList;
