@@ -31,7 +31,7 @@ class CategotyList extends Component {
           style={styles.category}
         >
           <View>
-            <Icon style={styles.icon} name={icon || 'ios-alarm-outline'} />
+            <Icon style={styles.icon} name={icon || 'ios-more-outline'} />
             <Text style={styles.name}>{capitalize(name)}</Text>
           </View>
         </TouchableOpacity>
