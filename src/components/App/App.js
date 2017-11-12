@@ -19,7 +19,7 @@ const App = StackNavigator({
     screen: WordList,
     navigationOptions: ({ navigation }) => ({
       title: navigation.state.params.categoryId,
-      header: <Header showBackButton title={navigation.state.params.category.name} />,
+      header: () => (<Header goBack={navigation.goBack} title={navigation.state.params.category.name} />),
     }),
   },
 });

@@ -12,11 +12,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 35,
     paddingBottom: 15,
-    // display: 'flex',
-    // flexDirection: 'row',
-    // alignItems: 'center',
-    // marginBottom: 0,
-    // position: 'relative',
   },
   title: {
     color: '#FFF',
@@ -25,12 +20,23 @@ const styles = StyleSheet.create({
     fontFamily: PRIMARY_FONT,
     textAlign: 'center',
   },
-  backButton: {
+  goBackLink: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    width: 80,
+    paddingLeft: 20,
+    paddingTop: 20,
+    justifyContent: 'center',
+    flex: 1,
+    zIndex: 10,
+  },
+  goBackIcon: {
     color: '#FFF',
     fontSize: 5 * BASE_FONT_SIZE,
-    position: 'absolute',
-    top: '85%',
-    left: 20,
+    width: 40,
+    height: 40,
   },
 });
 

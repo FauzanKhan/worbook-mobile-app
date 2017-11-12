@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './HeaderStyles';
 
 class Header extends Component {
   render() {
-    const { showBackButton, title } = this.props;
+    const { title, goBack } = this.props;
 
     return (
       <View style={styles.container}>
-        { showBackButton &&
-            <Icon style={styles.backButton}
-              name="ios-arrow-round-back"
-              onPress={this.navigateBack}
-            />
+        { goBack &&
+          <TouchableOpacity style={styles.goBackLink} onPress={() => {console.log('called'); goBack()}}>
+            <Icon style={styles.goBackIcon} name="ios-arrow-round-back"/>
+          </TouchableOpacity>
         }
         <Text style={styles.title}>{title}</Text>
       </View>
