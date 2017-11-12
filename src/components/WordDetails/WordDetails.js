@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { Text, View, Image, ScrollView, Button } from 'react-native';
 import { capitalize, trim } from 'lodash';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import {
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableNativeFeedback,
+} from 'react-native';
 
 import Audio from '../Audio';
 import WordDetailSection from '../WordDetailSection';
 import styles from './WordDetailsStyles';
+import { SECONDARY_COLOR } from '../../utils/styleGuide';
 
+/* eslint-disable */
 class WordDetails extends Component {
   render() {
     const { name, imageUrl, audioSrc, definition, synonyms } = this.props.navigation.state.params.word;
@@ -14,6 +23,7 @@ class WordDetails extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
+          {/* TODO: extract next View into a separate component */}
           <View style={styles.imageWrapper}>
             <View style={styles.imageOverlay}></View>
             <View style={styles.imageText}>
@@ -29,14 +39,24 @@ class WordDetails extends Component {
           </WordDetailSection>
           { !!synonymsList.length &&
               <WordDetailSection title="Also Known as">
+                {/* TODO: extract newxt View into a separate component */}
                 <View style={styles.synonymsList}>
-                  { synonymsList.map(synonym => <Text key={synonym} style={[styles.detailsText, styles.synonym]}>{capitalize(synonym)}</Text>)}
+                  { synonymsList.map(synonym =>
+                      <Text key={synonym} style={[styles.detailsText, styles.synonym]}>
+                        {capitalize(trim(synonym))}
+                      </Text>
+                    )
+                  }
                 </View>
               </WordDetailSection>
           }
         </ScrollView>
         <View style={styles.practiceWrapper}>
-          <Button title="Practice" />
+          <TouchableNativeFeedback>
+            <View style={styles.practiceButton}>
+              <Text style={styles.practiceButtonText}>PRACTICE</Text>
+            </View>
+          </TouchableNativeFeedback>
         </View>
       </View>
     );
