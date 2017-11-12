@@ -5,15 +5,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {
   Text,
   View,
-  Image,
   ScrollView,
   TouchableNativeFeedback,
 } from 'react-native';
 
-import Audio from '../Audio';
 import WordDetailSection from '../WordDetailSection';
+import WordAudioVisualSection from '../WordAudioVisualSection';
 import styles from './WordDetailsStyles';
-import { SECONDARY_COLOR } from '../../utils/styleGuide';
 
 /* eslint-disable */
 class WordDetails extends Component {
@@ -23,17 +21,7 @@ class WordDetails extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {/* TODO: extract next View into a separate component */}
-          <View style={styles.imageWrapper}>
-            <View style={styles.imageOverlay}></View>
-            <View style={styles.imageText}>
-              <Text style={styles.wordTitle}>{capitalize(name)}</Text>
-            </View>
-            <Audio source={audioSrc} style={styles.speakerTouchable}>
-              <Icon style={styles.icon} name="ios-play-outline" />
-            </Audio>
-            <Image style={styles.image} source={{ uri: imageUrl }} />
-          </View>
+          <WordAudioVisualSection word={name} imageUrl={imageUrl} audioSrc={audioSrc} />
           <WordDetailSection title="Definition">
             <Text style={styles.detailsText}>{definition}</Text>
           </WordDetailSection>
