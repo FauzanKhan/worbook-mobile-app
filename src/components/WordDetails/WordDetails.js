@@ -17,7 +17,7 @@ import styles from './WordDetailsStyles';
 class WordDetails extends Component {
   render() {
     const { name, imageUrl, audioSrc, definition, synonyms } = this.props.navigation.state.params.word;
-    const synonymsList = synonyms.split(',');
+    const synonymsList = synonyms ? synonyms.split(',') : [];
     return (
       <View style={styles.container}>
         <ScrollView>

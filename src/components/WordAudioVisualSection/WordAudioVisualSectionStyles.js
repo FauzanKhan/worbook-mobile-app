@@ -7,10 +7,10 @@ import {
 } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
-  imageWrapper: {
+  container: {
     position: 'relative',
   },
-  imageOverlay: {
+  overlay: {
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 150,
   },
-  imageText: {
+  overlayText: {
     zIndex: 3,
     height: '100%',
     width: '100%',
     position: 'absolute',
   },
-  wordTitle: {
+  title: {
     fontSize: 4 * BASE_FONT_SIZE,
     fontFamily: PRIMARY_FONT,
     color: '#FFF',

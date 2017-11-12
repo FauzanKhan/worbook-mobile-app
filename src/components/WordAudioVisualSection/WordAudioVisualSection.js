@@ -7,10 +7,10 @@ import Audio from '../Audio';
 import styles from './WordAudioVisualSectionStyles';
 
 const WordAudioVisualSection = ({ word, imageUrl, audioSrc }) => (
-  <View style={styles.imageWrapper}>
-    <View style={styles.imageOverlay} />
-    <View style={styles.imageText}>
-      <Text style={styles.wordTitle}>{capitalize(word)}</Text>
+  <View style={styles.container}>
+    <View style={styles.overlay} />
+    <View style={styles.overlayText}>
+      <Text style={styles.title}>{capitalize(word)}</Text>
     </View>
     <Audio source={audioSrc} style={styles.speakerTouchable}>
       <Icon style={styles.icon} name="ios-play-outline" />
