@@ -5,11 +5,10 @@ import { Audio } from 'expo';
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isPlaying: props.isPlaying,
-    };
+    this.state = { isPlaying: false };
 
     this.loadAudio = this.loadAudio.bind(this);
+    this.toggleAudioPlayback = this.toggleAudioPlayback.bind(this);
   }
 
   componentDidMount() {
@@ -17,21 +16,25 @@ class AudioPlayer extends Component {
   }
 
   async loadAudio() {
-    console.log("SOURCE", this.props.source);
-    const a = this.state;
-    const soundObject = new Audio.Sound();
+    this.soundObject = new Audio.Sound();
     try {
-      await soundObject.loadAsync({ uri: this.props.source });
-      console.log("Loaded");
-      await soundObject.playAsync();
+      await this.soundObject.loadAsync({ uri: this.props.source });
     } catch (e) {
-      console.log("ERROR", e);
+      console.log('ERROR Loading Audio', e);
     }
+  }
+
+  toggleAudioPlayback() {
+    this.setState({
+      isPlaying: !this.state.isPlaying,
+    }, () => (this.state.isPlaying
+      ? this.soundObject.playAsync()
+      : this.soundObject.stopAsync()));
   }
 
   render() {
     return (
-      <TouchableNativeFeedback onPress={this.play}>
+      <TouchableNativeFeedback onPress={this.toggleAudioPlayback}>
         <View style={this.props.style}>
           {this.props.children}
         </View>
