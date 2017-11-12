@@ -15,6 +15,10 @@ class AudioPlayer extends Component {
     this.loadAudio();
   }
 
+  componentWillUnmount() {
+    this.soundObject.stopAsync();
+  }
+
   async loadAudio() {
     this.soundObject = new Audio.Sound();
     try {
