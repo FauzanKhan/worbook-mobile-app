@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { View, TouchableNativeFeedback } from 'react-native';
 // import Sound from 'react-native-sound';
 
 // console.log('asdasd', Sound);
@@ -18,9 +18,11 @@ class Audio extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={this.play} style={this.props.style}>
-        {this.props.children}
-      </TouchableOpacity>
+      <TouchableNativeFeedback onPress={this.play}>
+        <View style={this.props.style}>
+          {this.props.children}
+        </View>
+      </TouchableNativeFeedback>
     );
   }
 }

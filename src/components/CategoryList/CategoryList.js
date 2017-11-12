@@ -3,7 +3,7 @@ import {
   View,
   ScrollView,
   Text,
-  TouchableOpacity,
+  TouchableNativeFeedback,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -31,15 +31,14 @@ class CategoryList extends Component {
 
     return (
       <View key={_id} style={styles.categoryWrapper}>
-        <TouchableOpacity
+        <TouchableNativeFeedback
           onPress={() => this.handleCategorySelection(category)}
-          style={styles.category}
         >
-          <View>
+          <View style={styles.category}>
             <Icon style={styles.icon} name={icon || 'ios-more-outline'} />
             <Text style={styles.name}>{capitalize(name)}</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableNativeFeedback>
       </View>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { Text, View, FlatList, TouchableNativeFeedback } from 'react-native';
 import { capitalize } from 'lodash';
 
 import api from '../../utils/api';
@@ -23,11 +23,11 @@ class WordList extends Component {
 
   getRenderItem({ item }) {
     return (
-      <TouchableOpacity onPress={() => this.handleWordSelection(item)}>
+      <TouchableNativeFeedback onPress={() => this.handleWordSelection(item)}>
         <View style={styles.listItem} key={item._id}>
           <Text style={styles.listItemText}>{capitalize(item.name)}</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableNativeFeedback>
     );
   }
 
