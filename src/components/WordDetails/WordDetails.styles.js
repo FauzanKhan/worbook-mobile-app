@@ -17,24 +17,11 @@ const styles = StyleSheet.create({
     lineHeight: 3 * BASE_FONT_SIZE,
     color: FG_COLOR,
   },
-  practiceWrapper: {
+  practiceButtonWrapper: {
     padding: 20,
     backgroundColor: '#FFFF',
     borderTopWidth: 1,
     borderColor: BORDER_COLOR,
-  },
-  practiceButton: {
-    backgroundColor: SECONDARY_COLOR,
-    height: 40,
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  practiceButtonText: {
-    color: '#FFF',
-    fontFamily: PRIMARY_FONT,
-    fontSize: 2 * BASE_FONT_SIZE,
   },
 });
 

@@ -12,6 +12,7 @@ import {
 import WordDetailSection from '../WordDetailSection';
 import WordAudioVisualSection from '../WordAudioVisualSection';
 import TagList from '../TagList';
+import PracticeButton from '../PracticeButton';
 
 import styles from './WordDetails.styles';
 
@@ -36,12 +37,8 @@ class WordDetails extends Component {
           }
         </ScrollView>
 
-        <View style={styles.practiceWrapper}>
-          <TouchableNativeFeedback>
-            <View style={styles.practiceButton}>
-              <Text style={styles.practiceButtonText}>PRACTICE</Text>
-            </View>
-          </TouchableNativeFeedback>
+        <View style={styles.practiceButtonWrapper}>
+          <PracticeButton />
         </View>
       </View>
     );
