@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { PRIMARY_COLOR, BASE_FONT_SIZE, PRIMARY_FONT } from '../../utils/styleGuide';
+import { PRIMARY_COLOR, BASE_FONT_SIZE, PRIMARY_FONT, FG_COLOR, BG_LIGHT, BORDER_COLOR } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
   imageWrapper: {
@@ -49,7 +49,32 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 5 * BASE_FONT_SIZE,
     color: '#FFF',
-    paddingLeft: 5,
+    paddingLeft: 5, // TODO: get rid of this atrocity
+  },
+  detailsText: {
+    fontSize: 2 * BASE_FONT_SIZE,
+    fontFamily: PRIMARY_FONT,
+    lineHeight: 3 * BASE_FONT_SIZE,
+    color: FG_COLOR,
+  },
+  synonymsList: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  synonym: {
+    backgroundColor: BG_LIGHT,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 2,
+    marginRight: 5,
+    marginBottom: 5,
+    alignSelf: 'flex-start',
+
+  },
+  practice: {
+    padding: 20,
+    flex: 1,
   },
 });
 
