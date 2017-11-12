@@ -3,7 +3,6 @@ import {
   BASE_FONT_SIZE,
   PRIMARY_FONT,
   FG_COLOR,
-  BG_LIGHT,
   BORDER_COLOR,
   SECONDARY_COLOR,
 } from '../../utils/styleGuide';
@@ -17,21 +16,6 @@ const styles = StyleSheet.create({
     fontFamily: PRIMARY_FONT,
     lineHeight: 3 * BASE_FONT_SIZE,
     color: FG_COLOR,
-  },
-  synonymsList: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-  },
-  synonym: {
-    backgroundColor: BG_LIGHT,
-    paddingHorizontal: 10,
-    paddingVertical: 2,
-    borderRadius: 2,
-    marginRight: 5,
-    marginBottom: 5,
-    alignSelf: 'flex-start',
-
   },
   practiceWrapper: {
     padding: 20,

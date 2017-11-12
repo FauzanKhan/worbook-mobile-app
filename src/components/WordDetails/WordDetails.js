@@ -11,6 +11,8 @@ import {
 
 import WordDetailSection from '../WordDetailSection';
 import WordAudioVisualSection from '../WordAudioVisualSection';
+import TagList from '../TagList';
+
 import styles from './WordDetailsStyles';
 
 /* eslint-disable */
@@ -22,23 +24,18 @@ class WordDetails extends Component {
       <View style={styles.container}>
         <ScrollView>
           <WordAudioVisualSection word={name} imageUrl={imageUrl} audioSrc={audioSrc} />
+
           <WordDetailSection title="Definition">
             <Text style={styles.detailsText}>{definition}</Text>
           </WordDetailSection>
+
           { !!synonymsList.length &&
               <WordDetailSection title="Also Known as">
-                {/* TODO: extract newxt View into a separate component */}
-                <View style={styles.synonymsList}>
-                  { synonymsList.map(synonym =>
-                      <Text key={synonym} style={[styles.detailsText, styles.synonym]}>
-                        {capitalize(trim(synonym))}
-                      </Text>
-                    )
-                  }
-                </View>
+                <TagList tags={synonymsList} />
               </WordDetailSection>
           }
         </ScrollView>
+
         <View style={styles.practiceWrapper}>
           <TouchableNativeFeedback>
             <View style={styles.practiceButton}>
