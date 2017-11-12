@@ -13,7 +13,7 @@ import WordDetailSection from '../WordDetailSection';
 import WordAudioVisualSection from '../WordAudioVisualSection';
 import TagList from '../TagList';
 
-import styles from './WordDetailsStyles';
+import styles from './WordDetails.styles';
 
 /* eslint-disable */
 class WordDetails extends Component {

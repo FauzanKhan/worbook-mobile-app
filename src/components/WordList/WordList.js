@@ -4,7 +4,7 @@ import { capitalize } from 'lodash';
 
 import api from '../../utils/api';
 
-import styles from './WordListStyles';
+import styles from './WordList.styles';
 
 class WordList extends Component {
   constructor() {

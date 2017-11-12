@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import styles from './WordDetaliSectionStyles';
+import styles from './WordDetaliSection.styles';
 
 const WordDetailSection = ({ title, children }) => (
   <View style={styles.container}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TouchableNativeFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import styles from './HeaderStyles';
+import styles from './Header.styles';
 
 const Header = ({ title, goBack }) => (
   <View style={styles.container}>

@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { capitalize } from 'lodash';
 
 import Audio from '../Audio';
-import styles from './WordAudioVisualSectionStyles';
+import styles from './WordAudioVisualSection.styles';
 
 const WordAudioVisualSection = ({ word, imageUrl, audioSrc }) => (
   <View style={styles.container}>

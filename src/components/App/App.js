@@ -6,7 +6,7 @@ import CategoryList from '../CategoryList';
 import WordList from '../WordList';
 import WordDetails from '../WordDetails';
 
-import styles from './AppStyles';
+import styles from './App.styles';
 
 const App = StackNavigator({
   Home: {

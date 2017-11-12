@@ -9,7 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import { capitalize } from 'lodash';
 
-import styles from './CategoryListStyles';
+import styles from './CategoryList.styles';
 import api from '../../utils/api';
 
 class CategoryList extends Component {
