@@ -21,19 +21,23 @@ class AudioPlayer extends Component {
   }
 
   async loadAudio() {
-    this.audio = new Sound(this.props.source, null, (err) => {
+    console.log('Loading Audio', this.props.source);
+    this.audio = await new Sound(this.props.source, null, (err) => {
       if (err) {
-        console.log('ERROR Loading Audio', e);
+        console.log('ERROR Loading Audio', err);
       }
+      console.log('Loaded Audio');
     });
   }
 
   toggleAudioPlayback() {
-    this.setState({
-      isPlaying: !this.state.isPlaying,
-    }, () => (this.state.isPlaying
-      ? this.audio.play()
-      : this.audio.stop()));
+    if (this.audio) {
+      this.setState({
+        isPlaying: !this.state.isPlaying,
+      }, () => (this.state.isPlaying
+        ? this.audio.play()
+        : this.audio.stop()));
+    }
   }
 
   render() {
