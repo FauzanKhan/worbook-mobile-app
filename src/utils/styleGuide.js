@@ -1,6 +1,7 @@
 export const PRIMARY_COLOR = '#333';
 export const SECONDARY_COLOR = '#00aced';
 export const FG_COLOR = '#666';
+export const FG_COLOR_LIGHT = '#CCC';
 export const BG_LIGHT = '#F2F2F2';
 export const BORDER_COLOR = '#EAEAEA';
 
