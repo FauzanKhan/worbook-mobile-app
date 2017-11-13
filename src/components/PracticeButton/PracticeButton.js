@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, TouchableNativeFeedback } from 'react-native';
 import Voice from 'react-native-voice';
 
-import styles from './PracticeButton.styles';
+import Button from '../Button';
+// import styles from './PracticeButton.styles';
 
 const PLACEHOLDER_TEXT = 'PRACTICE';
 const RECORDING_TEXT = 'LISTENING...';
@@ -12,7 +13,7 @@ class PracticeButton extends Component {
   constructor() {
     super();
     this.state = {
-      text: PLACEHOLDER_TEXT,
+      label: PLACEHOLDER_TEXT,
     };
 
     Voice.onSpeechStart = this.handleSpeechStart.bind(this);
@@ -34,7 +35,7 @@ class PracticeButton extends Component {
   handleSpeechStart(e) {
     console.log('START', e);
     this.setState({
-      text: RECORDING_TEXT,
+      label: RECORDING_TEXT,
     });
     setTimeout(async () => {
       console.log('stopping');
@@ -49,7 +50,7 @@ class PracticeButton extends Component {
   handleSpeechEnd(e) {
     console.log('END', e);
     this.setState({
-      text: RECORDING_TEXT,
+      label: RECORDING_TEXT,
     });
   }
 
@@ -57,14 +58,14 @@ class PracticeButton extends Component {
     console.log('RESULTS', e);
     this.props.onResults(e.value);
     this.setState({
-      text: PLACEHOLDER_TEXT,
+      label: PLACEHOLDER_TEXT,
     });
   }
 
   handleSpeechError(e) {
     console.log('EROR', e);
     this.setState({
-      text: PLACEHOLDER_TEXT,
+      lebel: PLACEHOLDER_TEXT,
     });
   }
 
@@ -74,11 +75,7 @@ class PracticeButton extends Component {
 
   render() {
     return (
-      <TouchableNativeFeedback onPress={this.startRecording}>
-        <View style={styles.button}>
-          <Text style={styles.text}>{this.state.text}</Text>
-        </View>
-      </TouchableNativeFeedback>
+      <Button onPress={this.startRecording} label={this.state.label} />
     );
   }
 }

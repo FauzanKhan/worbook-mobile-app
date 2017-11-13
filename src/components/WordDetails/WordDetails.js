@@ -57,15 +57,6 @@ class WordDetails extends Component {
               onClose={this.clearResults}
               isCorrectAnswer={isCorrectAnswer}
               answer={isCorrectAnswer ? name : results[0]} />
-            // <Modal
-            //   animationType="slide"
-            //   transparent={true}
-            //   visible={true}
-            //   onRequestClose={this.clearResults}>
-            //   <Text>You Said :</Text>
-            //   <Text>{isCorrectAnswer ? name : results[0]}</Text>
-            //   <Text>{`Thats ${isCorrectAnswer ? 'correct' : 'incorrect' } answer.`}</Text>
-            // </Modal>
         }
         <ScrollView>
           <WordAudioVisualSection word={name} imageUrl={imageUrl} audioSrc={audioSrc} />
