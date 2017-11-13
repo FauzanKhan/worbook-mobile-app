@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, TouchableNativeFeedback } from 'react-native';
-// import { Audio } from 'expo';
+import Sound from 'react-native-sound';
 
 class AudioPlayer extends Component {
   constructor(props) {
@@ -12,28 +12,28 @@ class AudioPlayer extends Component {
   }
 
   componentDidMount() {
+    Sound.setCategory('Playback');
     this.loadAudio();
   }
 
   componentWillUnmount() {
-    this.soundObject.stopAsync();
+    this.audio.stop();
   }
 
   async loadAudio() {
-    this.soundObject = new Audio.Sound();
-    try {
-      await this.soundObject.loadAsync({ uri: this.props.source });
-    } catch (e) {
-      console.log('ERROR Loading Audio', e);
-    }
+    this.audio = new Sound(this.props.source, null, (err) => {
+      if (err) {
+        console.log('ERROR Loading Audio', e);
+      }
+    });
   }
 
   toggleAudioPlayback() {
     this.setState({
       isPlaying: !this.state.isPlaying,
     }, () => (this.state.isPlaying
-      ? this.soundObject.playAsync()
-      : this.soundObject.stopAsync()));
+      ? this.audio.play()
+      : this.audio.stop()));
   }
 
   render() {
