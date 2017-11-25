@@ -1,5 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { PRIMARY_FONT, BASE_FONT_SIZE, FG_COLOR, FG_COLOR_LIGHT } from '../../utils/styleGuide';
+import {
+  BASE_FONT_SIZE,
+  FG_COLOR_LIGHT,
+  baseStyles,
+} from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
   body: {
@@ -11,18 +15,16 @@ const styles = StyleSheet.create({
     zIndex: 11,
   },
   title: {
-    fontFamily: PRIMARY_FONT,
+    ...baseStyles.text,
     fontSize: 2.5 * BASE_FONT_SIZE,
-    color: FG_COLOR,
   },
   answer: {
-    fontFamily: PRIMARY_FONT,
+    ...baseStyles.text,
     fontSize: 4 * BASE_FONT_SIZE,
-    color: FG_COLOR,
     paddingVertical: 20,
   },
   note: {
-    fontFamily: PRIMARY_FONT,
+    ...baseStyles.text,
     fontSize: 2 * BASE_FONT_SIZE,
     color: FG_COLOR_LIGHT,
     paddingBottom: 20,

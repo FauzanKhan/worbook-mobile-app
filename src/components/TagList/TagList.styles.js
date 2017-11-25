@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  PRIMARY_FONT,
   BASE_FONT_SIZE,
-  FG_COLOR,
   BG_LIGHT,
+  baseStyles,
 } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
@@ -14,10 +13,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   tag: {
-    fontSize: 2 * BASE_FONT_SIZE,
-    fontFamily: PRIMARY_FONT,
+    ...baseStyles.text,
     lineHeight: 3 * BASE_FONT_SIZE,
-    color: FG_COLOR,
     backgroundColor: BG_LIGHT,
     paddingHorizontal: 10,
     paddingVertical: 2,

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   BASE_FONT_SIZE,
   PRIMARY_COLOR,
-  PRIMARY_FONT,
+  baseStyles,
 } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   title: {
+    ...baseStyles.text,
     fontSize: 4 * BASE_FONT_SIZE,
-    fontFamily: PRIMARY_FONT,
     color: '#FFF',
     position: 'absolute',
     bottom: 15,

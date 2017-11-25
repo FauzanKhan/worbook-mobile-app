@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  PRIMARY_FONT,
-  BASE_FONT_SIZE,
   SECONDARY_COLOR,
+  baseStyles,
 } from '../../utils/styleGuide';
 
 const base = {
@@ -12,11 +11,6 @@ const base = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-};
-
-const baseText = {
-  fontFamily: PRIMARY_FONT,
-  fontSize: 2 * BASE_FONT_SIZE,
 };
 
 const styles = StyleSheet.create({
@@ -29,11 +23,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   label: {
-    ...baseText,
+    ...baseStyles.text,
     color: '#FFF',
   },
   labelSecondary: {
-    ...baseText,
+    ...baseStyles.text,
     color: SECONDARY_COLOR,
   },
 });

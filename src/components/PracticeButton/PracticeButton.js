@@ -3,7 +3,6 @@ import { View, Text, TouchableNativeFeedback } from 'react-native';
 import Voice from 'react-native-voice';
 
 import Button from '../Button';
-// import styles from './PracticeButton.styles';
 
 const PLACEHOLDER_TEXT = 'PRACTICE';
 const RECORDING_TEXT = 'LISTENING...';
@@ -33,12 +32,10 @@ class PracticeButton extends Component {
   }
 
   handleSpeechStart(e) {
-    console.log('START', e);
     this.setState({
       label: RECORDING_TEXT,
     });
     setTimeout(async () => {
-      console.log('stopping');
       try {
         await Voice.stop();
       } catch (e) {
@@ -48,14 +45,12 @@ class PracticeButton extends Component {
   }
 
   handleSpeechEnd(e) {
-    console.log('END', e);
     this.setState({
       label: RECORDING_TEXT,
     });
   }
 
   handleSpeechResults(e) {
-    console.log('RESULTS', e);
     this.props.onResults(e.value);
     this.setState({
       label: PLACEHOLDER_TEXT,
@@ -63,14 +58,16 @@ class PracticeButton extends Component {
   }
 
   handleSpeechError(e) {
-    console.log('EROR', e);
     this.setState({
-      lebel: PLACEHOLDER_TEXT,
+      label: PLACEHOLDER_TEXT,
     });
   }
 
   handlePartialSpeechResults(e) {
-    console.log('PARTIAL', e);
+    console.log('PARTIAL RESULTS', e);
+    this.setState({
+      label: PROCESSING_TEXT,
+    });
   }
 
   render() {

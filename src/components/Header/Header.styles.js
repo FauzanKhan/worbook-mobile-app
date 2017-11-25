@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 import {
   PRIMARY_COLOR,
-  PRIMARY_FONT,
   BASE_FONT_SIZE,
+  baseStyles,
 } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   title: {
+    ...baseStyles.text,
     color: '#FFF',
     fontSize: 3 * BASE_FONT_SIZE,
     flexGrow: 1,
-    fontFamily: PRIMARY_FONT,
     textAlign: 'center',
   },
   goBackLink: {

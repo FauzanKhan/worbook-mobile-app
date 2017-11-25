@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  TEXT_COLOR,
+  FG_COLOR,
   BORDER_COLOR,
-  PRIMARY_FONT,
   BASE_FONT_SIZE,
+  baseStyles,
 } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
@@ -34,12 +34,11 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 5 * BASE_FONT_SIZE,
     paddingBottom: 10,
-    color: TEXT_COLOR,
+    color: FG_COLOR,
     textAlign: 'center',
   },
   name: {
-    fontFamily: PRIMARY_FONT,
-    fontSize: 2 * BASE_FONT_SIZE,
+    ...baseStyles.text,
   },
 });
 

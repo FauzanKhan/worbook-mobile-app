@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { PRIMARY_FONT, BASE_FONT_SIZE, FG_COLOR, BORDER_COLOR } from '../../utils/styleGuide';
+
+import {
+  BASE_FONT_SIZE,
+  BORDER_COLOR,
+  baseStyles,
+} from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,10 +14,9 @@ const styles = StyleSheet.create({
     borderColor: BORDER_COLOR,
   },
   title: {
+    ...baseStyles.text,
     fontSize: 1.5 * BASE_FONT_SIZE,
-    fontFamily: PRIMARY_FONT,
     paddingBottom: 5,
-    color: FG_COLOR,
   },
 });
 

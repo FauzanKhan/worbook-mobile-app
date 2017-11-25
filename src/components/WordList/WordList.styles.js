@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { BORDER_COLOR, BASE_FONT_SIZE } from '../../utils/styleGuide';
+import { BORDER_COLOR, BASE_FONT_SIZE, baseStyles } from '../../utils/styleGuide';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     borderColor: BORDER_COLOR,
   },
   listItemText: {
+    ...baseStyles.text,
     fontSize: 2 * BASE_FONT_SIZE,
   },
 });
