@@ -32,7 +32,8 @@ class WordList extends Component {
   }
 
   handleWordSelection(word) {
-    this.props.navigation.navigate('WordDetails', { word });
+    const categoryName = this.props.navigation.state.params.category.name;
+    this.props.navigation.navigate('WordDetails', { word, categoryName });
   }
 
   render() {
@@ -40,9 +41,10 @@ class WordList extends Component {
     return (
       <View style={styles.container}>
         { words &&
-            <FlatList
-              data={words}
-              renderItem={this.getRenderItem} />
+          <FlatList
+            data={words}
+            renderItem={this.getRenderItem}
+          />
         }
       </View>
     );

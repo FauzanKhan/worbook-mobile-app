@@ -1,5 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import { capitalize } from 'lodash';
 
 import Header from '../Header';
 import CategoryList from '../CategoryList';
@@ -16,17 +17,23 @@ const App = StackNavigator({
   },
   WordList: {
     screen: WordList,
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.params.category.name,
-      header: () => (<Header goBack={navigation.goBack} title={navigation.state.params.category.name} />),
-    }),
+    navigationOptions: ({ navigation }) => {
+      const title = capitalize(navigation.state.params.category.name);
+      return {
+        title,
+        header: () => (<Header goBack={() => navigation.goBack()} title={title} />),
+      };
+    },
   },
   WordDetails: {
     screen: WordDetails,
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.params.word.name,
-      header: () => (<Header goBack={navigation.goBack} title={navigation.state.params.word.name} />),
-    }),
+    navigationOptions: ({ navigation }) => {
+      const title = capitalize(navigation.state.params.categoryName);
+      return {
+        title,
+        header: () => (<Header goBack={() => navigation.goBack()} title={title} />),
+      };
+    },
   },
 });
 
