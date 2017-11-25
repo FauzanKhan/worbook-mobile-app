@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: PRIMARY_COLOR,
     paddingHorizontal: 20,
-    paddingTop: 35,
+    paddingTop: 15,
     paddingBottom: 15,
   },
   title: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: 80,
     paddingLeft: 20,
-    paddingTop: 20,
+    paddingTop: 0,
     justifyContent: 'center',
     flex: 1,
     zIndex: 10,
