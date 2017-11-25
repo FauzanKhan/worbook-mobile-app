@@ -38,8 +38,14 @@ class PracticeButton extends Component {
     setTimeout(async () => {
       try {
         await Voice.stop();
+        this.setState({
+          label: PROCESSING_TEXT,
+        });
       } catch (e) {
         console.error(e);
+        this.setState({
+          label: RECORDING_TEXT,
+        });
       }
     }, 3000);
   }
@@ -65,9 +71,6 @@ class PracticeButton extends Component {
 
   handlePartialSpeechResults(e) {
     console.log('PARTIAL RESULTS', e);
-    this.setState({
-      label: PROCESSING_TEXT,
-    });
   }
 
   render() {

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { capitalize, trim } from 'lodash';
 
 import {
   Text,
   View,
   ScrollView,
-  Modal,
 } from 'react-native';
 
 import WordDetailSection from '../WordDetailSection';
@@ -16,7 +14,6 @@ import ResultsModal from '../ResultsModal';
 
 import styles from './WordDetails.styles';
 
-/* eslint-disable */
 class WordDetails extends Component {
   constructor() {
     super();
@@ -27,36 +24,40 @@ class WordDetails extends Component {
   }
 
   clearResults() {
-    console.log('clearing resultsss');
     this.setState({
       results: null,
       isCorrectAnswer: false,
-    })
+    });
   }
 
   handleResults(results) {
     const answer = this.props.navigation.state.params.word.name;
     const isCorrectAnswer = Boolean(results.find(text =>
-      text.toLowerCase() === answer.toLowerCase()
-    ));
+      text.toLowerCase() === answer.toLowerCase()));
     this.setState({
       results,
-      isCorrectAnswer
+      isCorrectAnswer,
     });
   }
 
 
   render() {
-    const { name, imageUrl, audioSrc, definition, synonyms } = this.props.navigation.state.params.word;
+    const {
+      name,
+      imageUrl,
+      audioSrc,
+      definition,
+      synonyms,
+    } = this.props.navigation.state.params.word;
     const { results, isCorrectAnswer } = this.state;
     const synonymsList = synonyms ? synonyms.split(',') : [];
     return (
       <View style={styles.container}>
         { results &&
-            <ResultsModal
-              onClose={this.clearResults}
-              isCorrectAnswer={isCorrectAnswer}
-              answer={isCorrectAnswer ? name : results[0]} />
+          <ResultsModal
+            onClose={this.clearResults}
+            isCorrectAnswer={isCorrectAnswer}
+            answer={isCorrectAnswer ? name : results[0]} />
         }
         <ScrollView>
           <WordAudioVisualSection word={name} imageUrl={imageUrl} audioSrc={audioSrc} />
@@ -66,9 +67,9 @@ class WordDetails extends Component {
           </WordDetailSection>
 
           { !!synonymsList.length &&
-              <WordDetailSection title="Also Known as">
-                <TagList tags={synonymsList} />
-              </WordDetailSection>
+            <WordDetailSection title="Also Known as">
+              <TagList tags={synonymsList} />
+            </WordDetailSection>
           }
         </ScrollView>
 

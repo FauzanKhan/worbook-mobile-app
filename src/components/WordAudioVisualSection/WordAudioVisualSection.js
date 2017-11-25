@@ -13,9 +13,9 @@ const WordAudioVisualSection = ({ word, imageUrl, audioSrc }) => (
       <Text style={styles.title}>{capitalize(word)}</Text>
     </View>
     { !!audioSrc &&
-        <AudioPlayer source={audioSrc} style={styles.speakerTouchable}>
-          <Icon style={styles.icon} name="ios-play-outline" />
-        </AudioPlayer>
+      <AudioPlayer source={audioSrc} style={styles.speakerTouchable}>
+        <Icon style={styles.icon} name="ios-play-outline" />
+      </AudioPlayer>
     }
     <Image style={styles.image} source={{ uri: imageUrl }} />
   </View>
